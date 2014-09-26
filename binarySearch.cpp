@@ -1,5 +1,5 @@
 // tryCPpp.cpp : Defines the entry point for the console application.
-//
+//Rishabh Gupta
 
 #include "stdafx.h"
 #include <iostream>
