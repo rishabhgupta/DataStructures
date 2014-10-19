@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include <cmath>
+#include <conio>
 using namespace std;
 /*normal method
 int main()
