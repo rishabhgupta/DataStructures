@@ -1,10 +1,12 @@
 // tryCPpp.cpp : Defines the entry point for the console application.
 //Rishabh Gupta
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <iostream>
 #include <cmath>
-#include <conio>
+//#include <conio>
+#include <ncurses.h>
+
 using namespace std;
 /*normal method
 int main()
@@ -67,7 +69,7 @@ int main()
 		cout<<"Element not found"<<endl;
 	else
 		cout<<"Element "<<n<<" found at location "<<result;
-	system("PAUSE");
+	//system("PAUSE");
 	getchar();
 	return 0;
 }
