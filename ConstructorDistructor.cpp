@@ -1,10 +1,10 @@
 // cppTry.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <iostream>
 #include <stdlib.h>  
-#include <conio.h>
+//#include <conio.h>
 using namespace std;
 
 const static string unk="unknown";
@@ -57,7 +57,7 @@ int main()
 
 	const Animal b("goat","bob","baah");
 	b.print();
-	system("PAUSE");
-	getchar();
+	//system("PAUSE");
+	//getchar();
     return 0;
 }
