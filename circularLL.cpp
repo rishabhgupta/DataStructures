@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <ncurses.h>
+//#include <ncurses.h>
 #include <cstdlib>
 
 using namespace std;
@@ -223,6 +223,6 @@ int main()
 		cout<<"\nDo you wish to continue\n";
 		cin>>ch2;
 	}while(ch2==1);
-	getchar();
+	//getchar();
 	return 0;
 }

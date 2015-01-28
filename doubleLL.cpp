@@ -187,15 +187,73 @@ void displayRev()
 }
 void swap(int value)
 {
-	
+	cout<<"Element at position "<<value<<" to be swapped:"<<endl;
+	node* travel;
+	travel=start;
+	int count = 1;
+	while(travel!=NULL && count<value)
+	{
+		//cout<<travel->data<<endl;
+		travel=travel->next;
+		count++;
+
+	}
+	node* head = travel;
+	//cout<<head->data;
+	travel= start;
+	int nodes=1;
+	while(travel->next!=NULL)
+	{
+		//cout<<travel->data<<endl;
+		nodes++;
+		travel=travel->next;
+	}
+	cout<<"Total nodes :"<<nodes<<endl;
+	count =1;
+	while(count<value)
+	{
+		travel=travel->pre;
+		count++;
+	}
+	node* tail = travel;
+	cout<<"ELEMENTS TO BE SWAPPED ARE "<<head->data<<" and "<<tail->data<<"\n";
+	if(head->next==tail || tail->next==head)
+	{
+		if(value>nodes/2)
+		{
+			node *temp= head;
+			head= tail;
+			tail= temp;
+		}
+
+		cout<<"They are adjecent nodes.\n";
+		head->pre->next=tail;
+		tail->pre=head->pre;
+		head->next=tail->next;
+		tail->next=head;
+		head->pre=tail;
+
+		/*node* pred=head->pre;
+		node* succ=tail->next;
+		pred->next=tail;
+		tail->pre=pred;
+		succ->pre=head;
+		head->next=succ;
+		tail->next=head;
+		head->pre=tail;*/
+	}
+
+	return;
+
 }
 int main()
 {
 	int ch,cont;
 	do
 	{
-		cout<<"MENU\n1.Insert End\n2.Display\n3.Display Reverse \n4.Insert Bigining\n5. Insert After\n6. Delete \nEnter 7. Reverse\nyour choice\n";
+		cout<<"MENU\n1.Insert End\n2.Display\n3.Display Reverse \n4.Insert Bigining\n5. Insert After\n6. Delete \n 7. Reverse\n8. Swap\nEnter your choice\n";
 		cin>>ch;
+		int temp;
 		switch(ch)
 		{
 			case 1: insertEndNode();
@@ -206,17 +264,19 @@ int main()
 					break;
 			case 4: insertBigNode();
 					break;
-			case 5: int value;
-					cout<<"Enter a value\n";
-					cin>>value;
-					insertAfter(value);
+			case 5:	cout<<"Enter a value\n";
+					cin>>temp;
+					insertAfter(temp);
 					break;
-			case 6: int v;
-					cout<<"Enter a value\n";
-					cin>>v;
-					deleteNode(v);
+			case 6: cout<<"Enter a value\n";
+					cin>>temp;
+					deleteNode(temp);
 					break;
 			case 7: revereseList();
+					break;
+			case 8: cout<<"Enter a value\n";
+					cin>>temp;
+					swap(temp);
 					break;
 			default: cout<<"Error.\n";
 		}
